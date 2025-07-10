@@ -1,35 +1,46 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import collection1 from '../assets/images/description.png';
+import statue1 from '../assets/images/image1.jpg';
+import statue2 from '../assets/images/image2.jpg';
+import statue3 from '../assets/images/image3.jpg';
 import contactImage from '../assets/images/contact.png';
 import '../assets/font/apollon.css';
 
-const Home = () => {
+const CollectionClassique = () => {
   const navigate = useNavigate();
 
-  const handleCollectionClick = () => {
-    navigate('/collection-classique'); // Redirection vers le composant CollectionClassique
+  const handleHeaderClick = () => {
+    navigate('/');
   };
 
   return (
     <div style={styles.container}>
-      <header style={styles.header}>
-        <h1 style={styles.title}>Bienvenue sur Veinural</h1>
+      <header style={styles.header} onClick={handleHeaderClick}>
+        <h1 style={styles.title}>Collection Classique</h1>
         <p style={styles.subtitle}>
-          Découvrez notre collection unique de bustes inspirés de l'art classique et moderne.
+          Découvrez notre collection de bustes classiques, inspirés des grandes œuvres d'art et de l'histoire.
         </p>
       </header>
       <section style={styles.section}>
-        <h2 style={styles.sectionTitle}>Nos catégories populaires</h2>
+        <h2 style={styles.sectionTitle}>La collection Mythologia</h2>
         <div style={styles.categories}>
-          <div
-            style={styles.categoryCard}
-            onClick={handleCollectionClick}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-          >
-            <img src={collection1} alt="Buste classique" style={styles.image} />
-            <h3>Bustes classiques</h3>
+          <div style={styles.categoryCard}>
+            <img src={statue1} alt="Buste classique" style={styles.image} />
+            <h3>Buste classique 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            </p>
+          </div>
+          <div style={styles.categoryCard}>
+            <img src={statue2} alt="Buste classique" style={styles.image} />
+            <h3>Buste classique 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            </p>
+          </div>
+          <div style={styles.categoryCard}>
+            <img src={statue3} alt="Buste classique" style={styles.image} />
+            <h3>Buste classique 3</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
             </p>
@@ -64,6 +75,7 @@ const styles = {
     color: '#0a1a27',
     padding: '20px',
     borderRadius: '10px',
+    cursor: 'pointer',
   },
   title: {
     fontSize: '2.5em',
@@ -131,4 +143,4 @@ const styles = {
   },
 };
 
-export default Home;
+export default CollectionClassique;
